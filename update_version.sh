@@ -1,8 +1,5 @@
 #!/bin/sh
 
-apt-get install nodejs
-apt-get install npm
-
 repos=( "https://github.com/parmar-gaurav/nodejs.git" 
         "https://github.com/parmar-gaurav/nodejs.git" )
 
@@ -12,9 +9,12 @@ do
    git clone -b  development --single-branch $i  clone-git-repo/clone_$NEW_UUID
  done
 
+apt-get install nodejs
+apt-get install npm
+
 grunt bump -v
 
 mv commit.sh clone-git-repo/
-cd clone_git_repo/
+cd clone-git-repo/
 chmod +x commit.sh
-. /commit.sh
+./commit.sh
