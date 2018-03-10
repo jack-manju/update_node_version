@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-repos=( "https://github.com/parmar-gaurav/nodejs.git" 
-        "https://github.com/parmar-gaurav/nodejs.git" )
+repos=( "git@github.com:parmar-gaurav/update_node_version.git" 
+        "git@github.com:parmar-gaurav/update_node_version.git" )
 
 for i in "${repos[@]}"
 do 
@@ -9,8 +9,10 @@ do
    git clone -b  development --single-branch $i  clone-git-repo/clone_$NEW_UUID
  done
 
-apt-get install nodejs
+
 apt-get install npm
+npm install
+npm install -g grunt-cli
 
 grunt bump -v
 
